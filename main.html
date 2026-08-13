@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Abirami Kanthasamy - Full Stack Developer Portfolio">
+
+    <title>Abirami | Full Stack Developer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            DEFAULT: "#ff6b00",
+                            light: "#ff8c32",
+                            dark: "#cc5500"
+                        }
+                    },
+
+                    boxShadow: {
+                        orange:
+                            "0 0 20px rgba(255,107,0,.35)",
+                        orangeStrong:
+                            "0 0 40px rgba(255,107,0,.45)"
+                    },
+
+                    animation: {
+                        float: "float 5s ease-in-out infinite",
+                        pulseGlow: "pulseGlow 2s ease-in-out infinite",
+                        spinSlow: "spin 15s linear infinite"
+                    },
+
+                    keyframes: {
+                        float: {
+                            "0%, 100%": {
+                                transform: "translateY(0)"
+                            },
+                            "50%": {
+                                transform: "translateY(-15px)"
+                            }
+                        },
+
+                        pulseGlow: {
+                            "0%, 100%": {
+                                opacity: ".5"
+                            },
+                            "50%": {
+                                opacity: "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="bg-[#050505] text-white">
+
+<!-- =====================================================
+     BACKGROUND EFFECT
+===================================================== -->
+
+<div class="fixed inset-0 -z-10 overflow-hidden">
+
+    <div class="absolute
+                w-[500px]
+                h-[500px]
+                bg-orange/10
+                rounded-full
+                blur-[150px]
+                top-[-200px]
+                left-[-150px]">
+    </div>
+
+    <div class="absolute
+                w-[500px]
+                h-[500px]
+                bg-orange/5
+                rounded-full
+                blur-[150px]
+                bottom-[-200px]
+                right-[-150px]">
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header id="navbar"
+        class="fixed top-0 left-0 w-full z-50
+               transition-all duration-300">
+
+    <nav class="max-w-7xl mx-auto
+                px-6 lg:px-10
+                h-20
+                flex items-center
+                justify-between">
+
+        <!-- Logo -->
+
+        <a href="#home"
+           class="text-2xl font-bold tracking-tighter">
+
+            <span class="text-orange">&lt;</span>AK
+            <span class="text-orange">/&gt;</span>
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+
+        <div class="hidden md:flex items-center gap-8">
+
+            <a href="#home" class="nav-link active">
+                Home
+            </a>
+
+            <a href="#about" class="nav-link">
+                About
+            </a>
+
+            <a href="#services" class="nav-link">
+                Services
+            </a>
+
+            <a href="#skills" class="nav-link">
+                Skills
+            </a>
+
+            <a href="#projects" class="nav-link">
+                Projects
+            </a>
+
+            <a href="#contact" class="nav-link">
+                Contact
+            </a>
+
+        </div>
+
+
+        <!-- Contact button -->
+
+        <a href="#contact"
+           class="hidden md:flex
+                  items-center gap-2
+                  px-5 py-3
+                  rounded-full
+                  border border-orange/50
+                  text-sm
+                  hover:bg-orange
+                  hover:text-black
+                  transition">
+
+            Let's Talk
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <!-- Mobile menu -->
+
+        <button id="menuBtn"
+                class="md:hidden text-xl">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </nav>
+
+
+    <!-- Mobile Navigation -->
+
+    <div id="mobileMenu"
+         class="hidden md:hidden
+                bg-black/95
+                border-t border-white/10">
+
+        <div class="flex flex-col
+                    px-6 py-6 gap-5">
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section id="home"
+         class="min-h-screen
+                flex items-center
+                pt-28
+                relative">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6 lg:px-10
+                w-full">
+
+        <div class="grid
+                    lg:grid-cols-2
+                    gap-12
+                    items-center">
+
+
+            <!-- LEFT -->
+
+            <div class="reveal">
+
+                <p class="text-orange
+                          font-mono
+                          mb-5">
+
+                    &lt; Hello, I'm /&gt;
+
+                </p>
+
+
+                <h1 class="text-5xl
+                           sm:text-6xl
+                           lg:text-8xl
+                           font-bold
+                           leading-[.95]">
+
+                    Abirami
+
+                    <span class="block text-orange">
+                        Kanthasamy
+                    </span>
+
+                </h1>
+
+
+                <h2 class="text-xl
+                           sm:text-2xl
+                           mt-7
+                           text-gray-300">
+
+                    I'm a
+                    <span id="typing"
+                          class="text-orange">
+                        Full Stack Developer
+                    </span>
+
+                </h2>
+
+
+                <p class="mt-6
+                          text-gray-400
+                          max-w-xl
+                          leading-7">
+
+                    I craft modern web applications where clean code meets beautiful design. Focused on performance, usability, and building interfaces people actually enjoy using.
+                </p>
+
+
+                <!-- Buttons -->
+
+                <div class="flex flex-wrap
+                            gap-4
+                            mt-9">
+
+                    <a href="#projects"
+                       class="orange-btn">
+
+                        View My Work
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a href="https://drive.google.com/file/d/124HCzr6KdYOMl40r5LexklMi89UB-af9/view?usp=drivesdk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="outline-btn">
+
+                            Download CV
+
+                            <i class="fa-solid fa-download"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Social -->
+
+                <div class="flex gap-5 mt-8">
+
+                    <a href="https://github.com/Abiramik-2004" class="social">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abirami-kanthasamy/" class="social">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/abiramikanthasamy?igsh=MTB2cnA1aGtoeDh1Zg%3D%3D" class="social">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/abiramikanthasamy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social leetcode-icon"
+                    aria-label="LeetCode">
+
+                        LC
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="relative
+                        flex
+                        justify-center
+                        lg:justify-end
+                        reveal">
+
+
+                <!-- Orange ring -->
+
+                <div class="absolute
+                            w-[300px]
+                            h-[300px]
+                            sm:w-[450px]
+                            sm:h-[450px]
+                            border
+                            border-orange/40
+                            rounded-full
+                            animate-spinSlow">
+                </div>
+
+
+                <div class="absolute
+                            w-[240px]
+                            h-[240px]
+                            sm:w-[360px]
+                            sm:h-[360px]
+                            border
+                            border-orange/20
+                            rounded-full">
+                </div>
+
+
+                <!-- Profile image -->
+
+                <div class="relative
+                            w-[280px]
+                            h-[360px]
+                            sm:w-[360px]
+                            sm:h-[460px]
+                            rounded-3xl
+                            overflow-hidden
+                            border
+                            border-orange/30
+                            bg-gradient-to-b
+                            from-orange/20
+                            to-black
+                            shadow-orangeStrong
+                            z-10">
+
+                    <img src="assets/profile.png"
+                         alt="Abirami"
+                         class="w-full h-full
+                                object-cover">
+
+                </div>
+
+
+                <!-- Floating code card -->
+
+                <div class="absolute
+                            bottom-4
+                            left-0
+                            sm:left-10
+                            z-20
+                            glass
+                            p-5
+                            rounded-xl
+                            font-mono
+                            text-xs
+                            animate-float">
+
+                    <span class="text-purple-400">
+                        const
+                    </span>
+
+                    developer = {
+
+                    <br>
+
+                    &nbsp;&nbsp;name:
+                    <span class="text-orange">
+                        "Abirami"
+                    </span>,
+
+                    <br>
+
+                    &nbsp;&nbsp;role:
+                    <span class="text-orange">
+                        "Associate Software Engineer"
+                    </span>
+
+                    <br>
+
+                    };
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about"
+         class="section">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6 lg:px-10">
+
+        <div class="section-heading reveal">
+
+            <p>ABOUT ME</p>
+
+            <h2>
+                Design.
+                <span>Code.</span>
+                Build.
+            </h2>
+
+        </div>
+
+
+        <div class="grid
+                    lg:grid-cols-2
+                    gap-12
+                    items-center">
+
+
+            <div class="reveal">
+
+                <p class="text-gray-400
+                          leading-8">
+
+                    I'm a Computer Science and Engineering
+                    graduate passionate about building
+                    modern web applications.
+
+                </p>
+
+                <p class="text-gray-400
+                          leading-8
+                          mt-5">
+
+                    I enjoy transforming ideas into
+                    clean, functional and engaging
+                    digital experiences.
+
+                </p>
+
+
+                <a href="#contact"
+                   class="orange-btn inline-flex mt-8">
+
+                    More About Me
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Feature Cards -->
+
+            <div class="grid sm:grid-cols-2 gap-4 reveal">
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-crosshairs"></i>
+
+                    <h3>Pixel Perfect</h3>
+
+                    <p>
+                        Interfaces designed with
+                        attention to detail.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    <h3>Clean Code</h3>
+
+                    <p>
+                        Maintainable and scalable
+                        development.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    <h3>Fast Performance</h3>
+
+                    <p>
+                        Optimized websites with
+                        excellent performance.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <h3>User Focused</h3>
+
+                    <p>
+                        Experiences designed
+                        around real users.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section id="services"
+         class="section bg-[#080808]">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6 lg:px-10">
+
+        <div class="section-heading reveal">
+
+            <p>SERVICES</p>
+
+            <h2>
+                What I Can Do
+                <span>For You</span>
+            </h2>
+
+        </div>
+
+
+        <div class="grid
+                    md:grid-cols-2
+                    lg:grid-cols-4
+                    gap-5">
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-pen-ruler"></i>
+                </div>
+
+                <h3>UI/UX Design</h3>
+
+                <p>
+                    Beautiful interfaces that
+                    engage users and deliver
+                    meaningful experiences.
+                </p>
+
+                <a href="#contact">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Modern responsive websites
+                    built with current technologies.
+                </p>
+
+                <a href="#contact">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <h3>E-Commerce</h3>
+
+                <p>
+                    High converting online stores
+                    with smooth user experiences.
+                </p>
+
+                <a href="#contact">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+
+                <h3>Performance & SEO</h3>
+
+                <p>
+                    Fast, SEO-friendly websites
+                    optimized for performance.
+                </p>
+
+                <a href="#contact">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills"
+         class="section">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6 lg:px-10">
+
+        <div class="section-heading reveal">
+
+            <p>MY TECH STACK</p>
+
+            <h2>
+                Technologies
+                <span>I Use</span>
+            </h2>
+
+        </div>
+
+
+        <div class="grid
+                    grid-cols-2
+                    sm:grid-cols-3
+                    md:grid-cols-5
+                    gap-4">
+
+
+            <div class="tech-card reveal">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML5</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS3</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <span class="text-4xl font-bold text-blue-400">
+                    TS
+                </span>
+                <span>TypeScript</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <i class="fa-brands fa-react"></i>
+                <span>React</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <span class="text-3xl">
+                    N
+                </span>
+                <span>Next.js</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <i class="fa-brands fa-node-js"></i>
+                <span>Node.js</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <span class="text-2xl font-bold">
+                    ☁
+                </span>
+                <span>Tailwind</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <i class="fa-brands fa-git-alt"></i>
+                <span>Git</span>
+            </div>
+
+
+            <div class="tech-card reveal">
+                <i class="fa-brands fa-figma"></i>
+                <span>Figma</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects"
+         class="section bg-[#080808]">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6 lg:px-10">
+
+        <div class="flex
+                    flex-col
+                    sm:flex-row
+                    justify-between
+                    sm:items-end
+                    gap-5
+                    mb-12
+                    reveal">
+
+            <div class="section-heading mb-0">
+
+                <p>FEATURED PROJECTS</p>
+
+                <h2>
+                    Selected
+                    <span>Work</span>
+                </h2>
+
+            </div>
+
+            <a href="#"
+               class="text-orange
+                      hover:underline">
+
+                View All Projects →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="grid
+                    lg:grid-cols-3
+                    gap-6">
+
+
+            <!-- Project 1 -->
+
+            <div class="project-card reveal">
+
+                <div class="project-image">
+
+                    <img src="assets/project1.png"
+                         alt="Portfolio project">
+
+                    <div class="project-overlay">
+
+                        <a href="#">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="p-6">
+
+                    <span class="project-category">
+                        WEB DEVELOPMENT
+                    </span>
+
+                    <h3>
+                        E-Commerce Platform
+                    </h3>
+
+                    <p>
+                        A modern online shopping
+                        platform with responsive UI.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mt-5">
+
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card reveal">
+
+                <div class="project-image">
+
+                    <img src="assets/project2.png"
+                         alt="Dashboard project">
+
+                    <div class="project-overlay">
+
+                        <a href="#">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="p-6">
+
+                    <span class="project-category">
+                        FULL STACK
+                    </span>
+
+                    <h3>
+                        Analytics Dashboard
+                    </h3>
+
+                    <p>
+                        A real-time dashboard for
+                        visualizing business data.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mt-5">
+
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">API</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Project 3 -->
+
+            <div class="project-card reveal">
+
+                <div class="project-image">
+
+                    <img src="assets/project3.png"
+                         alt="Weather application">
+
+                    <div class="project-overlay">
+
+                        <a href="#">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="p-6">
+
+                    <span class="project-category">
+                        WEB APP
+                    </span>
+
+                    <h3>
+                        Weather Forecast
+                    </h3>
+
+                    <p>
+                        A clean weather application
+                        using a live weather API.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mt-5">
+
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">API</span>
+                        <span class="tag">CSS</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section class="section">
+
+    <div class="max-w-5xl
+                mx-auto
+                px-6">
+
+        <div class="section-heading text-center reveal">
+
+            <p>MY JOURNEY</p>
+
+            <h2>
+                Experience &
+                <span>Education</span>
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <span>
+                    2026
+                </span>
+
+                <h3>
+                    Associate Software Engineer
+                </h3>
+
+                <p>
+                    Working on modern software
+                    development and web technologies.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <span>
+                    2025
+                </span>
+
+                <h3>
+                    Web Development Internship
+                </h3>
+
+                <p>
+                    Developed responsive websites
+                    and worked with modern web technologies.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <span>
+                    2021 - 2025
+                </span>
+
+                <h3>
+                    BE Computer Science & Engineering
+                </h3>
+
+                <p>
+                    Built strong foundations in
+                    programming, databases, web development
+                    and software engineering.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="section bg-[#080808]">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6 lg:px-10">
+
+        <div class="section-heading reveal">
+
+            <p>TESTIMONIALS</p>
+
+            <h2>
+                What People
+                <span>Say</span>
+            </h2>
+
+        </div>
+
+
+        <div class="grid
+                    md:grid-cols-3
+                    gap-5">
+
+
+            <div class="testimonial reveal">
+
+                <div class="text-orange text-3xl">
+                    "
+                </div>
+
+                <p>
+                    Abirami delivered an impressive
+                    website with excellent attention
+                    to detail and clean implementation.
+                </p>
+
+                <div class="mt-6">
+
+                    <h4>
+                        Sarah Johnson
+                    </h4>
+
+                    <span>
+                        Product Manager
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="text-orange text-3xl">
+                    "
+                </div>
+
+                <p>
+                    Great developer with strong
+                    problem-solving skills and a
+                    passion for creating quality work.
+                </p>
+
+                <div class="mt-6">
+
+                    <h4>
+                        James Carter
+                    </h4>
+
+                    <span>
+                        Founder
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="testimonial reveal">
+
+                <div class="text-orange text-3xl">
+                    "
+                </div>
+
+                <p>
+                    Professional, creative and
+                    highly focused on building
+                    meaningful digital experiences.
+                </p>
+
+                <div class="mt-6">
+
+                    <h4>
+                        Michael Thompson
+                    </h4>
+
+                    <span>
+                        Tech Lead
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact"
+         class="section">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6 lg:px-10">
+
+        <div class="grid
+                    lg:grid-cols-2
+                    gap-12">
+
+
+            <!-- Text -->
+
+            <div class="reveal">
+
+                <div class="section-heading">
+
+                    <p>GET IN TOUCH</p>
+
+                    <h2>
+                        Let's Build Something
+                        <span>Amazing</span>
+                    </h2>
+
+                </div>
+
+                <p class="text-gray-400
+                          leading-8
+                          max-w-lg">
+
+                    Have a project in mind?
+                    Looking for a developer?
+                    I'd love to hear from you.
+
+                </p>
+
+
+                <div class="mt-8 space-y-5">
+
+                    <div class="contact-info">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+                            <span>Email</span>
+                            <p>
+                                hello@abirami.dev
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-info">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <div>
+                            <span>Phone</span>
+                            <p>
+                                +91 98765 43210
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-info">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <div>
+                            <span>Location</span>
+                            <p>
+                                Tamil Nadu, India
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Form -->
+
+            <form id="contactForm"
+                  class="glass
+                         rounded-2xl
+                         p-6
+                         sm:p-8
+                         reveal">
+
+                <div class="grid sm:grid-cols-2 gap-4">
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        required>
+
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        required>
+
+                </div>
+
+
+                <input
+                    type="text"
+                    placeholder="Subject"
+                    required>
+
+
+                <textarea
+                    rows="7"
+                    placeholder="Your Message"
+                    required>
+                </textarea>
+
+
+                <button type="submit"
+                        class="orange-btn w-full
+                               justify-center">
+
+                    Send Message
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+
+                <p id="formMessage"
+                   class="text-green-400
+                          text-center
+                          mt-4
+                          hidden">
+
+                    Message sent successfully!
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="border-t
+               border-white/10
+               py-8">
+
+    <div class="max-w-7xl
+                mx-auto
+                px-6
+                flex
+                flex-col
+                md:flex-row
+                justify-between
+                items-center
+                gap-4">
+
+        <div class="text-xl font-bold">
+
+            <span class="text-orange">
+                &lt;
+            </span>
+
+            AK
+
+            <span class="text-orange">
+                /&gt;
+            </span>
+
+        </div>
+
+
+        <p class="text-gray-500 text-sm">
+
+            © 2026 Abirami Kanthasamy.
+            All rights reserved.
+
+        </p>
+
+
+        <div class="flex gap-5">
+
+            <a href="#">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Back to top -->
+
+<button id="topBtn"
+        class="fixed
+               bottom-6
+               right-6
+               w-12
+               h-12
+               rounded-full
+               bg-orange
+               text-black
+               hidden
+               z-50">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
