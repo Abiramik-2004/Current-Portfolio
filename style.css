@@ -608,6 +608,13 @@ h4 {
 
     margin-top: 8px;
 }
+.timeline-item h5 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+    color: #875e41;
+}
+
 
 .timeline-item p {
     color: #777;
