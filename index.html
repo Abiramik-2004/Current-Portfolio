@@ -1337,64 +1337,89 @@
             <!-- Form -->
 
             <form id="contactForm"
-                  class="glass
-                         rounded-2xl
-                         p-6
-                         sm:p-8
-                         reveal">
+      class="glass
+             rounded-2xl
+             p-6
+             sm:p-8
+             reveal">
 
-                <div class="grid sm:grid-cols-2 gap-4">
-
-                    <input
-                        type="text"
-                        placeholder="Your Name"
-                        required>
-
-                    <input
-                        type="email"
-                        placeholder="Your Email"
-                        required>
-
-                </div>
+    <!-- Web3Forms Access Key -->
+    <input type="hidden"
+           name="access_key"
+           value="f5e9de11-da58-4c0c-85f7-30399ae6cbf4">
 
 
-                <input
-                    type="text"
-                    placeholder="Subject"
-                    required>
+    <!-- Anti-spam honeypot -->
+    <input type="checkbox"
+           name="botcheck"
+           class="hidden"
+           style="display: none;">
 
 
-                <textarea
-                    rows="7"
-                    placeholder="Your Message"
-                    required>
-                </textarea>
+    <!-- Name + Email -->
+
+    <div class="grid sm:grid-cols-2 gap-4">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required>
+
+    </div>
 
 
-                <button type="submit"
-                        class="orange-btn w-full
-                               justify-center">
+    <!-- Subject -->
 
-                    Send Message
-
-                    <i class="fa-solid fa-paper-plane"></i>
-
-                </button>
+    <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        required>
 
 
-                <p id="formMessage"
-                   class="text-green-400
-                          text-center
-                          mt-4
-                          hidden">
+    <!-- Message -->
 
-                    Message sent successfully!
+    <textarea
+        name="message"
+        rows="7"
+        placeholder="Your Message"
+        required></textarea>
 
-                </p>
 
-            </form>
+    <!-- Submit Button -->
 
-        </div>
+    <button id="submitBtn"
+            type="submit"
+            class="orange-btn w-full
+                   justify-center">
+
+        <span id="buttonText">
+            Send Message
+        </span>
+
+        <i id="buttonIcon"
+           class="fa-solid fa-paper-plane"></i>
+
+    </button>
+
+
+    <!-- Success/Error Message -->
+
+    <p id="formMessage"
+       class="text-center
+              mt-4
+              hidden">
+    </p>
+
+</form>
+</div>
 
     </div>
 
