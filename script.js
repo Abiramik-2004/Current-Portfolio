@@ -219,31 +219,202 @@ window.addEventListener("scroll", () => {
    CONTACT FORM
 ===================================================== */
 
+/* =====================================================
+   CONTACT FORM - WEB3FORMS
+===================================================== */
+
 const contactForm =
     document.getElementById("contactForm");
 
 const formMessage =
     document.getElementById("formMessage");
 
+const submitBtn =
+    document.getElementById("submitBtn");
 
-contactForm.addEventListener(
-    "submit",
-    function(event) {
+const buttonText =
+    document.getElementById("buttonText");
 
-        event.preventDefault();
+const buttonIcon =
+    document.getElementById("buttonIcon");
 
-        formMessage.classList.remove("hidden");
 
-        contactForm.reset();
+contactForm.addEventListener("submit", async function(event) {
 
-        setTimeout(() => {
+    event.preventDefault();
 
-            formMessage.classList.add("hidden");
 
-        }, 4000);
+    /* Disable button while sending */
+
+    submitBtn.disabled = true;
+
+    submitBtn.style.opacity = "0.7";
+
+    buttonText.textContent = "Sending...";
+
+    buttonIcon.className =
+        "fa-solid fa-spinner fa-spin";
+
+
+    /* Get form data */
+
+    const formData =
+        new FormData(contactForm);
+
+
+    const object =
+        Object.fromEntries(formData);
+
+
+    const json =
+        JSON.stringify(object);
+
+
+    try {
+
+        /* Send form to Web3Forms */
+
+        const response = await fetch(
+            "https://api.web3forms.com/submit",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+
+                body: json
+            }
+        );
+
+
+        const result =
+            await response.json();
+
+
+        /* SUCCESS */
+
+        if (response.status === 200) {
+
+            formMessage.textContent =
+                "✓ Message sent successfully! I'll get back to you soon.";
+
+            formMessage.classList.remove(
+                "hidden",
+                "text-red-400"
+            );
+
+            formMessage.classList.add(
+                "text-green-400"
+            );
+
+
+            /* Clear form */
+
+            contactForm.reset();
+
+
+            /* Reset button */
+
+            buttonText.textContent =
+                "Message Sent";
+
+            buttonIcon.className =
+                "fa-solid fa-check";
+
+
+            /* Restore button */
+
+            setTimeout(() => {
+
+                buttonText.textContent =
+                    "Send Message";
+
+                buttonIcon.className =
+                    "fa-solid fa-paper-plane";
+
+                submitBtn.disabled = false;
+
+                submitBtn.style.opacity = "1";
+
+            }, 3000);
+
+
+        } else {
+
+            /* ERROR */
+
+            formMessage.textContent =
+                result.message ||
+                "Something went wrong. Please try again.";
+
+            formMessage.classList.remove(
+                "hidden",
+                "text-green-400"
+            );
+
+            formMessage.classList.add(
+                "text-red-400"
+            );
+
+
+            submitBtn.disabled = false;
+
+            submitBtn.style.opacity = "1";
+
+            buttonText.textContent =
+                "Send Message";
+
+            buttonIcon.className =
+                "fa-solid fa-paper-plane";
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Contact form error:",
+            error
+        );
+
+
+        formMessage.textContent =
+            "Unable to send message. Please try again later.";
+
+        formMessage.classList.remove(
+            "hidden",
+            "text-green-400"
+        );
+
+        formMessage.classList.add(
+            "text-red-400"
+        );
+
+
+        submitBtn.disabled = false;
+
+        submitBtn.style.opacity = "1";
+
+        buttonText.textContent =
+            "Send Message";
+
+        buttonIcon.className =
+            "fa-solid fa-paper-plane";
 
     }
-);
+
+
+    /* Hide message after 5 seconds */
+
+    setTimeout(() => {
+
+        formMessage.classList.add("hidden");
+
+    }, 5000);
+
+});
 
 
 
